@@ -12,11 +12,11 @@ import lunch from './assets/lunch.jpg'
  recipes based on the selected category.
  Return: a circular image and the category name and calls onCategoryClick when clicked 
 ***********************************************************************************/
-function CategoryFilter({category, onCategoryClick}) {
+function CategoryFilter({categoryData, onCategoryClick}) {
   return (
-    <div className="category-filter" onClick={() => onCategoryClick(category.name)}>
-      <img src={category.img} alt={category.name}/>
-      <p>{category.name}</p>
+    <div className="category-filter" onClick={() => onCategoryClick(categoryData.name)}>
+      <img src={categoryData.img}/>
+      <p>{categoryData.name}</p>
     </div>
   );
 }
@@ -27,11 +27,11 @@ function CategoryFilter({category, onCategoryClick}) {
  Gets prop 
  Return:  
 ***********************************************************************************/
-function ListCategoryFilter({ categories, onCategoryClick }) {
+function ListCategoryFilter({ categoriesData, onCategoryClick }) {
 
   // for each category in the list, create a CategoryFilter
-  const listCategoryFilter = categories.map(category => (
-    <CategoryFilter key={category.name} category={category} onCategoryClick={onCategoryClick} />
+  const listCategoryFilter = categoriesData.map((categoryData) => (
+    <CategoryFilter key={categoryData.name} categoryData={categoryData} onCategoryClick={onCategoryClick} />
   ));
 
   return (
@@ -49,19 +49,20 @@ function ListCategoryFilter({ categories, onCategoryClick }) {
 ***********************************************************************************/
 export default function Page() {
 
-  const categories = [
+  const categoriesData = [
     { name: 'Breakfast', img: breakfast },
     { name: 'Lunch', img: lunch },
   ];
+  const [choosenCategory, setChoosenCategory] = useState("");
 
-  function onCategoryClick(category) {
-    alert(`You clicked on ${category.name}`);
+  function onCategoryClick(categoryName: string) {
+    setChoosenCategory(categoryName);
   };
 
   return (
     <div className="page">
-      <ListCategoryFilter categories={categories} onCategoryClick={onCategoryClick} />
-      <h3>You click on {categories[0].name}</h3>
+      <ListCategoryFilter categoriesData={categoriesData} onCategoryClick={onCategoryClick} />
+      <h3>You clicked on {choosenCategory}</h3>
     </div>
   );
 }
