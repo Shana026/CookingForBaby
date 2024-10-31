@@ -27,6 +27,7 @@ export default function Page() {
 
   return (
     <div className="page">
+      <h1 className="title">Cooking For Baby</h1>
       <ListCategoryFilter categoriesData={categoriesData} onCategoryClick={onCategoryClick} />
       <h3>Category Filter: {choosenCategory}</h3>
       <ListRecipeCard filteredRecipes={filteredRecipes} />

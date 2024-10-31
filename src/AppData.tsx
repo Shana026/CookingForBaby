@@ -17,7 +17,7 @@ export const categoriesData = [
   { name: '4-6 months', image: babyfoursixmonths },
   { name: '6-8 months', image: babysixheightmonths },
   { name: '9-12 months', image: babyninetwelvemonths },
-  { name: '12 months and +', image: babytwelvemonthsandplus },
+  { name: '12+ months', image: babytwelvemonthsandplus },
   { name: 'Soup', image: soup },
   { name: 'Meal', image: meal },
   { name: 'Finger Food', image: fingerFood },

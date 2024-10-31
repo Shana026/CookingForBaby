@@ -1,77 +1,7 @@
 .App {
   text-align: center;
 }
-
-.list-category-filter {
-  display: flex;
-  gap: 30px;
-  /*justify-content: flex-start;
-  align-items: center; */
-  padding: 10px;
-  margin-top: 50px;
-  background-color: #fae8f7;
-}
-
-.category-filter {
-  display: flex;          /* Sets the layout of each category item to Flexbox */
-  flex-direction: column; /* Stacks image and text vertically */
-  align-items: center;    /* Centers image and text horizontally */
-  cursor: pointer;        /* Changes the cursor to indicate that the item is clickable */
-}
-
-.category-filter:hover {
-  transform: scale(1.05);
-}
-
-.category-img {
-  width: 100px;
-    height: 100px;
-    margin-right: 10px;
-    border-radius: 50%;  /* Makes the image circular */
-    object-fit: cover;   /* Ensures the image covers the circle without stretching */
-}
-
-.category-filter p{
-  margin-top: 8px;
-  font-size: 14px;
+.title {
   text-align: center;
-  font-weight: bold;
+  font-family: cursive;
 }
-
-.list-recipe-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
-  gap: 40px;                           /* Space between cards */
-  padding: 20px;
-  max-width: 1200px;                   /* Maximum width for container */
-  margin: 0 auto;                      /* Centers the grid horizontally */
-  padding-left: 160px;                  /* Adds padding on the left */
-  padding-right: 160px;                 /* Adds padding on the right */   
-}
-
-.recipe-card {
-  max-width: 300px;                /* Controls the maximum width */
-  height: auto;                    /* Allows card height to adjust based on content */
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.recipe-card:hover {
-  transform: scale(1.05);
-}
-
-.recipe-card-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover; /* Ensures the image fills the space without distorting */
-  object-position: center;
-}
-
