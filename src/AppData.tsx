@@ -1,4 +1,4 @@
-
+import babyfoursixmonths from './assets/baby4-6months.jpg'
 import babysixheightmonths from './assets/baby6-8months.jpg'
 import babyninetwelvemonths from './assets/baby9-12months.jpeg'
 import babytwelvemonthsandplus from './assets/baby12+months.jpg'
@@ -14,7 +14,7 @@ import cookies from './assets/cookies.jpg'
 import chickenSoup from './assets/chicken_soup.webp'
 
 export const categoriesData = [
-  { name: '4-6 months', image: './assets/baby4-6months.jpg' },
+  { name: '4-6 months', image: babyfoursixmonths },
   { name: '6-8 months', image: babysixheightmonths },
   { name: '9-12 months', image: babyninetwelvemonths },
   { name: '12 months and +', image: babytwelvemonthsandplus },
