@@ -8,7 +8,13 @@
     padding-left: 10px;
     padding-right: 10px;
     background-color: #fae8f7;
+    overflow-x: auto;
+    scrollbar-width: none;   /* Hide scrollbar for Firefox */
   }
+
+  .list-category-filter::-webkit-scrollbar {
+    display: none;           /* Hide scrollbar for Chrome, Safari */
+}
   
   .category-filter {
     display: flex;          /* Sets the layout of each category item to Flexbox */
