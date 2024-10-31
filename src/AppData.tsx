@@ -30,7 +30,7 @@ export const recipesData = [
     name: 'Fruits Compote',
     age: 4,
     image: fruitsCompote,
-    categories: ['4-6 months', '6-8 months', '9-12 months', '12 months and +', 'Sweet'],
+    categories: ['4-6 months', '6-8 months', '9-12 months', '12+ months', 'Sweet'],
     description: '',
   },
   {
@@ -38,7 +38,7 @@ export const recipesData = [
     name: 'Pancakes',
     age: 8,
     image: pancakes,
-    categories: ['6-8 months', '9-12 months', '12 months and +', 'Sweet'],
+    categories: ['6-8 months', '9-12 months', '12+ months', 'Sweet'],
     description: '',
   },
   {
@@ -46,7 +46,7 @@ export const recipesData = [
     name: 'Pumpkin Soup',
     age: 4,
     image: pumpkinSoup,
-    categories: ['4-6 months', '6-8 months', '9-12 months', '12 months and +', 'Soup'],
+    categories: ['4-6 months', '6-8 months', '9-12 months', '12+ months', 'Soup'],
     description: '',
   },
   {
@@ -54,7 +54,7 @@ export const recipesData = [
     name: 'Potato fries',
     age: 9,
     image: potatoFries,
-    categories: ['9-12 months', '12 months and +', 'Finger Food'],
+    categories: ['9-12 months', '12+ months', 'Finger Food'],
     description: '',
   },
   {
@@ -62,7 +62,7 @@ export const recipesData = [
     name: 'Cookies',
     age: 12,
     image: cookies,
-    categories: ['12 months and +', 'Finger Food', 'Sweet'],
+    categories: ['12+ months', 'Finger Food', 'Sweet'],
     description: '',
   },
   {
@@ -70,7 +70,7 @@ export const recipesData = [
     name: 'Chicken Soup',
     age: 6,
     image: chickenSoup,
-    categories: ['6-8 months', '9-12 months', '12 months and +', 'Soup', 'Meal'],
+    categories: ['6-8 months', '9-12 months', '12+ months', 'Soup', 'Meal'],
     description: '',
   },
 ];
