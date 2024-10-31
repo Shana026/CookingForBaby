@@ -1,17 +1,17 @@
 import babyfoursixmonths from './assets/baby4-6months.jpg'
 import babysixheightmonths from './assets/baby6-8months.jpg'
-import babyninetwelvemonths from './assets/baby9-12months.jpeg'
+import babyninetwelvemonths from './assets/baby9-12months.jpg'
 import babytwelvemonthsandplus from './assets/baby12+months.jpg'
 import sweet from './assets/sweet3.jpg'
 import meal from './assets/meal.jpg'
-import fingerFood from './assets/finger_food.webp'
+import fingerFood from './assets/finger_food.jpg'
 import pumpkinSoup from './assets/pumpkin_soup.jpg'
 import soup from './assets/soup.jpg'
 import pancakes from './assets/pancakes.jpg'
-import potatoFries from './assets/potato_fries.jpeg'
+import potatoFries from './assets/potato_fries.jpg'
 import fruitsCompote from './assets/fruits_compote.jpg'
 import cookies from './assets/cookies.jpg'
-import chickenSoup from './assets/chicken_soup.webp'
+import chickenSoup from './assets/chicken_soup.jpg'
 
 export const categoriesData = [
   { name: '4-6 months', image: babyfoursixmonths },
