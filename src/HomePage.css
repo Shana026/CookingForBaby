@@ -1,4 +1,10 @@
+.page {
+    background-color: white;
+}
+
 .title {
     text-align: center;
     font-family: cursive;
+    color: #5d3724;
+    font-size: 50px;
 }
