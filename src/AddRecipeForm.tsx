@@ -5,7 +5,7 @@ import './AddRecipeForm.css';
   Component AddRecipeForm: form
   Return: form to add a new recipe
 ***********************************************************************************/
-function AddRecipeForm({ onAddRecipeClick }) {
+export function AddRecipeForm({ onAddRecipeClick, onClose }) {
 
   // State variables for form inputs
   const [name, setName] = useState('');
@@ -31,6 +31,7 @@ function AddRecipeForm({ onAddRecipeClick }) {
     };
 
     onAddRecipeClick(newRecipe);
+    onClose();
 
     // Clear the form fields after submission
     setName('');
@@ -55,4 +56,15 @@ function AddRecipeForm({ onAddRecipeClick }) {
   );
 }
 
-export default AddRecipeForm;
+
+export function RecipeModal({ isOpen, onClose, onAddRecipeClick }) {
+  if (!isOpen) return null; // Don't render anything if the modal is not open
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <AddRecipeForm onAddRecipeClick={onAddRecipeClick} onClose={onClose} />
+      </div>
+    </div>
+  );
+}

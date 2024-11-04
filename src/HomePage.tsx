@@ -5,7 +5,7 @@ import './HomePage.css';
 import {ListRecipeCard} from './Recipes.tsx';
 import ListCategoryFilter from './Categories.tsx';
 import { recipesData, categoriesData } from './AppData.tsx';
-import AddRecipeForm from './AddRecipeForm.tsx';
+import {RecipeModal} from './AddRecipeForm.tsx';
 
 
 /***********************************************************************************
@@ -15,7 +15,7 @@ import AddRecipeForm from './AddRecipeForm.tsx';
 function HomePage() {
 
     const [choosenCategory, setChoosenCategory] = useState(null);
-    const [isFormVisible, setIsFormVisible] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
     const navigate = useNavigate();
   
     // if there is a choosenCategory - creates a new array containing only the recipes that
@@ -36,22 +36,25 @@ function HomePage() {
         console.log(newRecipe);
     };
 
-    // Function to toggle form visibility
-    function toggleFormVisibility() {
-        setIsFormVisible((prevVisibility) => !prevVisibility);
+    // Function to open the modal
+    function openModal() {
+        setIsModalOpen(true);
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        setIsModalOpen(false);
     }
 
     return (
-      <div className="page">
-        <h1 className="title">Cooking For Baby</h1>
-        <ListCategoryFilter categoriesData={categoriesData} onCategoryClick={onCategoryClick} />
-        <button className="add-recipe-button" onClick={toggleFormVisibility}>
-        {isFormVisible ? 'Hide Recipe Form' : 'Add Recipe'}
-        </button>
-        {isFormVisible && (<AddRecipeForm onAddRecipeClick={onAddRecipeClick}/>)}
-        <h3>Category: {choosenCategory}</h3>
-        <ListRecipeCard filteredRecipes={filteredRecipes} onRecipeClick={onRecipeClick}/>
-      </div>
+    <div className="page">
+      <h1 className="title">Cooking For Baby</h1>
+      <ListCategoryFilter categoriesData={categoriesData} onCategoryClick={onCategoryClick} />
+      <button className="add-recipe-button" onClick={openModal}>Add Recipe</button>
+      <h3>Category: {choosenCategory}</h3>
+      <ListRecipeCard filteredRecipes={filteredRecipes} onRecipeClick={onRecipeClick} />
+      <RecipeModal isOpen={isModalOpen} onClose={closeModal} onAddRecipeClick={onAddRecipeClick} />
+    </div>
     );
   }
 
