@@ -5,6 +5,7 @@ import './HomePage.css';
 import {ListRecipeCard} from './Recipes.tsx';
 import ListCategoryFilter from './Categories.tsx';
 import { recipesData, categoriesData } from './AppData.tsx';
+import {AddRecipeFormModal} from './AddRecipe.tsx';
 
 
 /***********************************************************************************
@@ -14,7 +15,7 @@ import { recipesData, categoriesData } from './AppData.tsx';
 function HomePage() {
 
     const [choosenCategory, setChoosenCategory] = useState(null);
-
+    const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
     const navigate = useNavigate();
   
     // if there is a choosenCategory - creates a new array containing only the recipes that
@@ -30,14 +31,30 @@ function HomePage() {
     function onRecipeClick(recipeName) {
       navigate(`/recipe/${recipeName}`);
     };
-  
+
+    function onAddRecipeClick(newRecipe) {
+        console.log(newRecipe);
+    };
+
+    // Function to open the modal
+    function openModal() {
+        setIsModalOpen(true);
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        setIsModalOpen(false);
+    }
+
     return (
-      <div className="page">
-        <h1 className="title">Cooking For Baby</h1>
-        <ListCategoryFilter categoriesData={categoriesData} onCategoryClick={onCategoryClick} />
-        <h3>Category: {choosenCategory}</h3>
-        <ListRecipeCard filteredRecipes={filteredRecipes} onRecipeClick={onRecipeClick}/>
-      </div>
+    <div className="page">
+      <h1 className="title">Cooking For Baby</h1>
+      <ListCategoryFilter categoriesData={categoriesData} onCategoryClick={onCategoryClick} />
+      <button className="add-recipe-button" onClick={openModal}>Add Recipe</button>
+      <h3>Category: {choosenCategory}</h3>
+      <ListRecipeCard filteredRecipes={filteredRecipes} onRecipeClick={onRecipeClick} />
+      <AddRecipeFormModal isOpen={isModalOpen} onClose={closeModal} onAddRecipeClick={onAddRecipeClick} />
+    </div>
     );
   }
 

@@ -44,26 +44,48 @@ export function RecipeCard({recipeData, onRecipeClick}) {
 
   /***********************************************************************************
    Component RecipePage
-   Return: 
+   Return: displays the recipe details
   ***********************************************************************************/
     export function RecipePage() {
-    // Extract the recipe name from the URL
+
+    // extract the recipe name from the URL
     const { recipeName } = useParams();
-    // Find the recipe object in the data that matches the name in the URL
+
+    // find the recipe object in the data that matches the name in the URL
     const recipe = recipesData.find(r => r.name === recipeName);
   
-    // If no matching recipe is found, display an error message
+    // if no matching recipe is found, display an error message
     if (!recipe) {
       return <p>Recipe not found</p>;
     }
   
-    // Display the recipe's details if a matching recipe is found
+    // display the recipe's details if a matching recipe is found
     return (
       <div className="recipe-page">
-        <h2>{recipe.name}</h2>
-        <img src={recipe.image} alt={recipe.name} className="recipe-page-image" />
-        <p>Age: from {recipe.age} months</p>
-        <p>{recipe.description}</p>
+        {/* Header section with recipe title and age */}
+        <div className="recipe-header">
+          <h1>{recipe.name}</h1>
+          <p>From {recipe.age} months</p>
+        </div>
+
+        {/* Image and ingredients section*/}
+        <div className="recipe-content">
+          <img src={recipe.image} className="recipe-image" />
+          <div className="recipe-ingredients">
+            <h3>Ingredients</h3>
+            <ul>
+              {recipe.ingredients.map((ingredient, index) => (
+              <li className= "ingredient-item" key={index}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Instructions section */}
+        <div className="recipe-description">
+          <h3>Instructions</h3>
+          <p>{recipe.description}</p>
+        </div>
       </div>
     );
   }

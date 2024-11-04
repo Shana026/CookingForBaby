@@ -7,9 +7,10 @@
     margin-top: 50px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #fae8f7;
+    background-color: #fae5d3;
     overflow-x: auto;
     scrollbar-width: none;   /* Hide scrollbar for Firefox */
+    /* background: linear-gradient(45deg, #4CAF50, #45a049); /* Gradient background */
   }
 
   .list-category-filter::-webkit-scrollbar {

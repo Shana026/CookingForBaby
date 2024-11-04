@@ -1,4 +1,26 @@
+.page {
+    background-color: white;
+}
+
 .title {
     text-align: center;
     font-family: cursive;
+    color: #5d3724;
+    font-size: 50px;
 }
+
+.add-recipe-button {
+    padding: 8px 12px; /* More padding for a better look */
+    background: #5d3724;
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .add-recipe-button:hover {
+    background: rgb(135, 65, 65);
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
