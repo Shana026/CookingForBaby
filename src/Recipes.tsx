@@ -62,7 +62,6 @@ export function RecipeCard({recipeData, onRecipeClick}) {
     // display the recipe's details if a matching recipe is found
     return (
       <div className="recipe-page">
-
         {/* Header section with recipe title and age */}
         <div className="recipe-header">
           <h1>{recipe.name}</h1>
