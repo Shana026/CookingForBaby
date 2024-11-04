@@ -57,7 +57,7 @@ export function AddRecipeForm({ onAddRecipeClick, onClose }) {
 }
 
 
-export function RecipeModal({ isOpen, onClose, onAddRecipeClick }) {
+export function AddRecipeFormModal({ isOpen, onClose, onAddRecipeClick }) {
   if (!isOpen) return null; // Don't render anything if the modal is not open
 
   return (

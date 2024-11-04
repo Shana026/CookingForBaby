@@ -5,7 +5,7 @@ import './HomePage.css';
 import {ListRecipeCard} from './Recipes.tsx';
 import ListCategoryFilter from './Categories.tsx';
 import { recipesData, categoriesData } from './AppData.tsx';
-import {RecipeModal} from './AddRecipeForm.tsx';
+import {AddRecipeFormModal} from './AddRecipe.tsx';
 
 
 /***********************************************************************************
@@ -53,7 +53,7 @@ function HomePage() {
       <button className="add-recipe-button" onClick={openModal}>Add Recipe</button>
       <h3>Category: {choosenCategory}</h3>
       <ListRecipeCard filteredRecipes={filteredRecipes} onRecipeClick={onRecipeClick} />
-      <RecipeModal isOpen={isModalOpen} onClose={closeModal} onAddRecipeClick={onAddRecipeClick} />
+      <AddRecipeFormModal isOpen={isModalOpen} onClose={closeModal} onAddRecipeClick={onAddRecipeClick} />
     </div>
     );
   }
